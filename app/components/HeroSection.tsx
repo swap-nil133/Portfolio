@@ -54,7 +54,7 @@ export default function HeroSection() {
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat opacity-30"
           style={{
-            backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRailiOPvq9wQ0W57gamrdrx9ZASMfvO58oAR6lg7KZ9-0p1WX56gCsRJc&s?height=1080&width=1920&text=Futuristic+Tech+Background+with+Neon+Lights+and+Digital+Grid')`,
+            backgroundImage: `url('https://saamarketing.co.uk/wp-content/uploads/2022/08/The-Different-Types-of-Technology-GIF.gif?height=1080&width=1920')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950/70 via-gray-950/50 to-gray-950" />

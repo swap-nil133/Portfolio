@@ -1,22 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-const defaultConfig = require("shadcn/ui/tailwind.config")
-
 module.exports = {
-  ...defaultConfig,
+  darkMode: ["class"],
   content: [
-    ...defaultConfig.content,
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    ...defaultConfig.theme,
     extend: {
-      ...defaultConfig.theme.extend,
       screens: {
         xs: "475px",
-        ...defaultConfig.theme.extend.screens,
       },
       colors: {
         border: "hsl(var(--border))",
@@ -64,6 +58,8 @@ module.exports = {
       animation: {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         glow: "glow 2s ease-in-out infinite alternate",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
         glow: {
@@ -76,11 +72,19 @@ module.exports = {
               "0 0 10px rgba(239, 68, 68, 0.5), 0 0 20px rgba(239, 68, 68, 0.5), 0 0 30px rgba(239, 68, 68, 0.5)",
           },
         },
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
       },
       backdropBlur: {
         xs: "2px",
       },
     },
   },
-  plugins: [...defaultConfig.plugins, require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate")],
 }
