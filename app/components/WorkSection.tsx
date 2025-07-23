@@ -23,9 +23,13 @@ export default function WorkSection() {
   const placeholderProjects = [
     {
       title: "CGPA Calculator (C++ Console Application)",
-      description: "A student CGPA calculator using classes to manage subjects and compute weighted averages, demonstrating object-oriented design and basic algorithmic logic.",
-      image: "https://i.postimg.cc/fLSrYLmX/Screenshot-2025-07-23-235346.png?height=400&width=600&text=C%2B%2B+Project",
+      description:
+        "A student CGPA calculator using classes to manage subjects and compute weighted averages, demonstrating object-oriented design and basic algorithmic logic.",
+      image:
+        "https://i.postimg.cc/fLSrYLmX/Screenshot-2025-07-23-235346.png?height=400&width=600&text=C%2B%2B+Project",
       status: "Completed",
+      tags: ["C++", "Console App", "OOP", "Algorithm"],
+      liveLink: "https://replit.com/@swapnil133/CGPA-Calculator",
     },
     {
       title: "Python Learning Project",
@@ -44,6 +48,7 @@ export default function WorkSection() {
   return (
     <section id="work" ref={sectionRef} className="py-32 relative">
       <div className="container mx-auto px-6">
+        {/* Header */}
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 100 }}
@@ -66,7 +71,9 @@ export default function WorkSection() {
             transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
           >
             My{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-orange-500 bg-clip-text text-transparent">Work</span>
+            <span className="bg-gradient-to-r from-purple-400 to-orange-500 bg-clip-text text-transparent">
+              Work
+            </span>
           </motion.h2>
           <motion.p
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
@@ -74,7 +81,8 @@ export default function WorkSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            A showcase of my creative projects and learning journey in software engineering
+            A showcase of my creative projects and learning journey in software
+            engineering
           </motion.p>
         </motion.div>
 
@@ -86,7 +94,11 @@ export default function WorkSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div className="relative group" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
+            <motion.div
+              className="relative group"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 group-hover:border-white/30 transition-all duration-500">
                 <motion.div
                   className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"
@@ -149,7 +161,9 @@ export default function WorkSection() {
               <h3 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 {featuredProject.title}
               </h3>
-              <p className="text-gray-300 text-lg mb-8 leading-relaxed">{featuredProject.description}</p>
+              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                {featuredProject.description}
+              </p>
 
               <div className="flex flex-wrap gap-3 mb-8">
                 {featuredProject.tags.map((tag, tagIndex) => (
@@ -221,6 +235,18 @@ export default function WorkSection() {
                       </span>
                     </div>
                     <p className="text-gray-400 leading-relaxed">{project.description}</p>
+
+                    {/* Live Link Button */}
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-3 px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition"
+                      >
+                        Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
