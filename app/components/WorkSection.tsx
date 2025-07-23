@@ -22,10 +22,10 @@ export default function WorkSection() {
 
   const placeholderProjects = [
     {
-      title: "C++ Console Application",
-      description: "A data structure implementation project showcasing algorithmic thinking",
-      image: "/placeholder.svg?height=400&width=600&text=C%2B%2B+Project",
-      status: "In Development",
+      title: "CGPA Calculator (C++ Console Application)",
+      description: "A student CGPA calculator using classes to manage subjects and compute weighted averages, demonstrating object-oriented design and basic algorithmic logic.",
+      image: "https://i.postimg.cc/fLSrYLmX/Screenshot-2025-07-23-235346.png?height=400&width=600&text=C%2B%2B+Project",
+      status: "Completed",
     },
     {
       title: "Python Learning Project",
